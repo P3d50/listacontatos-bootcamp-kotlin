@@ -24,7 +24,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupToolBar(toolBar, "Lista de contatos",false)
-        setupListView()
+        setupRecycleView()
         setupOnClicks()
     }
 
@@ -33,13 +33,15 @@ class MainActivity : BaseActivity() {
         ivBuscar.setOnClickListener { onClickBuscar() }
     }
 
-    private fun setupListView(){
+    private fun setupRecycleView(){
         recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = ContatoAdapter(this,ContatoSingleton.lista){onClickItemRecyclerView(it)}
+        recyclerView.adapter = adapter
     }
 
     override fun onResume() {
         super.onResume()
-        onClickBuscar()
+        adapter?.notifyDataSetChanged()
     }
 
     private fun onClickAdd(){
