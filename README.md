@@ -5,9 +5,6 @@
 - Implementando SQLite, HelperDB, select no app, insert no app, delete do app
 - Conceito e Implementação de Threads e loadings 
 
-[![NPM](https://img.shields.io/npm/l/react)]() 
-
-
 - <a href="">Data Management</a>
 - <a href="">Linguagem SQL</a>
 - <a href="">Implementando SQLite</a>
