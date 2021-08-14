@@ -28,6 +28,14 @@ class MainActivity : BaseActivity() {
         setupOnClicks()
     }
 
+    companion object{
+        fun getInstance():MainActivity.Companion{
+            return this
+        }
+    }
+
+
+
     private fun setupOnClicks(){
         fab.setOnClickListener { onClickAdd() }
         ivBuscar.setOnClickListener { onClickBuscar() }
@@ -41,7 +49,7 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        adapter?.notifyDataSetChanged()
+        onClickBuscar()
     }
 
     private fun onClickAdd(){
